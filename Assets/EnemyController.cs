@@ -22,7 +22,6 @@ public class EnemyController : MonoBehaviour
         if (distance <= lookRadius)
         {
             agent.SetDestination(target.position);
-
             if(distance <= agent.stoppingDistance)
             {
                 // Atack the target
@@ -31,6 +30,12 @@ public class EnemyController : MonoBehaviour
                 FaceTarget();
             }
         }
+
+        /*if(agent.velocity == new Vector3(0, 0, 0)){
+            Debug.Log("Stop");    
+        }else{
+            Debug.Log(agent.velocity);
+        }*/
     }
 
     void FaceTarget()
